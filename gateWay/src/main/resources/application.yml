@@ -1,0 +1,31 @@
+server:
+  port: 8080  # The port for the API Gateway
+
+spring:
+  application:
+    name: api-gateway  # Name of the application
+
+  cloud:
+    gateway:
+      routes:
+        - id: employee-service
+          uri: lb://employee-service
+          predicates:
+            - Path=/employee/**
+        - id: department-service
+          uri: lb://department-service
+          predicates:
+            - Path=/department/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # Eureka server URL
+
+      logging:
+        level:
+          org.springframework.cloud.gateway: DEBUG
+
+  main:
+    web-application-type : reactive
+
