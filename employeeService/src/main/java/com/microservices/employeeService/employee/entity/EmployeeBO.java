@@ -15,6 +15,8 @@ public class EmployeeBO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private Integer departmentId;
+
     @Column(nullable = false, length = 256)
     private String name;
 
