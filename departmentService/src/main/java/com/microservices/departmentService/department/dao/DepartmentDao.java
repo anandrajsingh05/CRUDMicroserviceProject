@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DepartmentDao extends JpaRepository<DepartmentBO, Integer> {
+
+    DepartmentBO findByNameContaining(String name);
 }

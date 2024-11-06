@@ -28,7 +28,7 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/add")
-    public EmployeeTO createEmployee(@RequestBody EmployeeTO employee) {
+    public EmployeeTO createEmployee(@RequestBody EmployeeTO employee) throws Exception {
         return employeeService.createEmployee(employee);
     }
 

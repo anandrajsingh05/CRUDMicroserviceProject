@@ -9,6 +9,8 @@ import java.time.LocalDate;
 @Setter
 public class EmployeeTO {
     private Integer id;
+    private Integer departmentId;
+    private String departmentName;
     private String name;
     private LocalDate doj;
     private String email;

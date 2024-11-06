@@ -10,6 +10,8 @@ public interface DepartmentService {
 
     DepartmentTO getDepartmentById(Integer id);
 
+    DepartmentTO getDepartmentByName(String name);
+
     DepartmentTO createDepartment(DepartmentTO department);
 
     void deleteDepartment(Integer id);

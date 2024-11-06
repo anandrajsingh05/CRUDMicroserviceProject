@@ -10,7 +10,7 @@ public interface EmployeeService {
 
     EmployeeTO getEmployeeById(Integer id);
 
-    EmployeeTO createEmployee(EmployeeTO employee);
+    EmployeeTO createEmployee(EmployeeTO employee) throws Exception;
 
     void deleteEmployee(Integer id);
 }

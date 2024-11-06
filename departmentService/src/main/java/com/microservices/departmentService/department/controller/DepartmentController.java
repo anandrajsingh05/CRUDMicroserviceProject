@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/department")
+@RequestMapping(value = "/department")
 public class DepartmentController {
 
     private final DepartmentService departmentService;
@@ -25,6 +25,11 @@ public class DepartmentController {
     @GetMapping("/{id}")
     public DepartmentTO getDepartmentById(@PathVariable Integer id) {
         return departmentService.getDepartmentById(id);
+    }
+
+    @GetMapping("/byName")
+    public DepartmentTO getDepartmentByName(@RequestParam("name") String name) {
+        return departmentService.getDepartmentByName(name);
     }
 
     @PostMapping("/add")

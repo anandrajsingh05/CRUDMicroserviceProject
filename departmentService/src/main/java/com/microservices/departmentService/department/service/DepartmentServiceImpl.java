@@ -42,6 +42,15 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
+    public DepartmentTO getDepartmentByName(String name) {
+       DepartmentBO departmentBO = departmentDao.findByNameContaining(name);
+       if(departmentBO != null){
+           return modelMapper.map(departmentBO, DepartmentTO.class);
+       }
+       return null;
+    }
+
+    @Override
     public DepartmentTO createDepartment(DepartmentTO department) {
         DepartmentBO departmentBO = modelMapper.map(department, DepartmentBO.class);
         return modelMapper.map(departmentDao.save(departmentBO), DepartmentTO.class);
